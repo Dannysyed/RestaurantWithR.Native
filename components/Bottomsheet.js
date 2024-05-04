@@ -4,13 +4,13 @@ import BottomSheet from '@gorhom/bottom-sheet';
 
 const BottomSheets = () => {
     // ref
-    const bottomSheetRef = useRef < BottomSheet > (null);
+    const bottomSheetRef = useRef(null);
 
     // variables
     const snapPoints = useMemo(() => ['15%', '80%'], []);
 
     // callbacks
-    const handleSheetChanges = useCallback((index: number) => {
+    const handleSheetChanges = useCallback((index) => {
         console.log('handleSheetChanges', index);
     }, []);
 
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     contentContainer: {
         flex: 1,
         alignItems: 'center',
-
+        justifyContent: 'center',
     },
 });
 
