@@ -9,6 +9,10 @@ import { Ionicons } from '@expo/vector-icons'
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import SearchScreen from './screens/SearchScreen';
+import MapScreen from './screens/MapScreen';
+import OrderScreen from './screens/OrderScreen';
+import ProfileScreen from './screens/ProfileScreen';
+import OrderDetail from './screens/OrderDetail';
 
 const Tab = createBottomTabNavigator();
 
@@ -28,6 +32,7 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="GameStartScreen" component={DrawerScreen} options={{ headerShown: false }} />
+        <Stack.Screen name="OrderDetail" component={OrderDetail} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -43,6 +48,27 @@ function DrawerScreen() {
         options={{
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="home" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen name="Maps" component={MapScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="location-sharp" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen name="Order" component={OrderScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="cart" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen name="Profile" component={ProfileScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="man" color={color} size={size} />
           ),
         }}
       />
